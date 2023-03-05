@@ -47,13 +47,13 @@ Before installing Kafka, make sure that you have installed Java and ZooKeeper on
 
 ### Start the ZooKeeper service by running the following command in the Kafka directory:
 
-#### Linux
+#### ~ Linux
 
 ```bash
  bin/zookeeper-server-start.sh config/zookeeper.properties
 ```
 
-#### Mac M1
+#### ~ Mac M1
 
 ```bash
  zookeeper-server-start /opt/homebrew/etc/kafka/zookeeper.properties
@@ -61,13 +61,13 @@ Before installing Kafka, make sure that you have installed Java and ZooKeeper on
 
 ### Start the Kafka service by running the following command in the Kafka directory:
 
-#### Linux
+#### ~ Linux
 
 ```bash
  bin/kafka-server-start.sh config/server.properties
 ```
 
-#### Mac M1
+#### ~ Mac M1
 
 ```bash
  kafka-server-start /opt/homebrew/etc/kafka/server.properties
@@ -80,13 +80,13 @@ To create a topic, follow these steps:
 1. Open a command prompt and navigate to the Kafka directory.
 2. Run the following command to create a new topic:
 
-#### Linux
+#### ~ Linux
 
 ```bash
  bin/kafka-topics.sh --create --zookeeper localhost:9092 --replication-factor 1 --partitions 1 --topic <topic_name>
 ```
 
-#### Mac M1
+#### ~ Mac M1
 
 ```bash
  kafka-topics --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic <topic_name>
@@ -96,13 +96,13 @@ To create a topic, follow these steps:
 
 ### To produce messages, run the following command in the Kafka directory:
 
-#### Linux
+#### ~ Linux
 
 ```bash
  bin/kafka-console-producer.sh --broker-list localhost:9092 --topic <topic_name>
 ```
 
-#### Mac M1
+#### ~ Mac M1
 
 ```bash
  kafka-console-producer --broker-list localhost:9092 --topic <topic_name>
@@ -110,13 +110,13 @@ To create a topic, follow these steps:
 
 ### To consume messages, run the following command in the Kafka directory:
 
-#### Linux
+#### ~ Linux
 
 ```bash
  bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic <topic_name> --from-beginning
 ```
 
-#### Mac M1
+#### ~ Mac M1
 
 ```bash
  kafka-console-consumer --bootstrap-server localhost:9092 --topic <topic_name> --from-beginning
@@ -178,61 +178,61 @@ To take advantage of Kafka's advanced features, you can use various command-line
 
 Here is a summary of the commands you can use to work with Kafka's advanced features:
 
-#### Produce message to specific partition:
+#### ~ Produce message to specific partition:
 
 ```bash
  bin/kafka-console-producer.sh --broker-list localhost:9092 --topic <topic_name> --partition <partition_number>
 ```
 
-#### Consume message from specific partition:
+#### ~ Consume message from specific partition:
 
 ```bash
  bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic <topic_name> --partition <partition_number> --offset <offset_number>
 ```
 
-#### Produce message with key:
+#### ~ Produce message with key:
 
 ```bash
  bin/kafka-console-producer.sh --broker-list localhost:9092 --topic <topic_name> --property parse.key=true --property key.separator=:
 ```
 
-#### Produce message with headers:
+#### ~ Produce message with headers:
 
 ```bash
  bin/kafka-console-producer.sh --broker-list localhost:9092 --topic <topic_name> --property "parse.key=true" --property "key.separator=:" --property "key.header=key"
 ```
 
-#### List all topics:
+#### ~ List all topics:
 
 ```bash
  bin/kafka-topics.sh --list --zookeeper localhost:9092
 ```
 
-#### Describe a topic:
+#### ~ Describe a topic:
 
 ```bash
  bin/kafka-topics.sh --describe --zookeeper localhost:9092 --topic <topic_name>
 ```
 
-#### Delete a topic:
+#### ~ Delete a topic:
 
 ```bash
  bin/kafka-topics.sh --delete --zookeeper localhost:9092 --topic <topic_name>
 ```
 
-#### List consumer groups:
+#### ~ List consumer groups:
 
 ```bash
  bin/kafka-consumer-groups.sh --list --bootstrap-server localhost:9092
 ```
 
-#### Describe a consumer group:
+#### ~ Describe a consumer group:
 
 ```bash
  bin/kafka-consumer-groups.sh --describe --bootstrap-server localhost:9092 --group <group_name>
 ```
 
-#### Reset consumer group offsets:
+#### ~ Reset consumer group offsets:
 
 ```bash
  bin/kafka-consumer-groups.sh --reset-offsets --bootstrap-server localhost:9092 --group <group_name> --topic <topic_name> --to-earliest
