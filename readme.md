@@ -94,7 +94,7 @@ To create a topic, follow these steps:
 
 ## Producing and Consuming Messages
 
-- To produce messages, run the following command in the Kafka directory:
+### To produce messages, run the following command in the Kafka directory:
 
 #### Linux
 
@@ -108,7 +108,7 @@ To create a topic, follow these steps:
  kafka-console-producer --broker-list localhost:9092 --topic <topic_name>
 ```
 
-- To consume messages, run the following command in the Kafka directory:
+### To consume messages, run the following command in the Kafka directory:
 
 #### Linux
 
