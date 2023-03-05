@@ -4,7 +4,7 @@ Apache Kafka is a high-throughput distributed streaming platform used for buildi
 
 ![Apache Kafka](https://imgur.com/N9yMh5B.png)
 
-- [Introduction to Apache Kafka](#introduction-to-apache-kafka)
+- [Introduction to Apache Kafka](#)
   - [Basic Concepts](#basic-concepts)
 - [Installation](#installation)
 - [Creating a Topic](#creating-a-topic)
