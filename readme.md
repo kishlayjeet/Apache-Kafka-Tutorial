@@ -45,7 +45,7 @@ Topics are split into a number of partitions, which allows for parallelism when 
 
 Before installing Kafka, make sure that you have installed Java and ZooKeeper on your machine. You can download the latest version of Kafka from the official website. Once downloaded, extract the files, and then follow the below steps:
 
-1. Start the ZooKeeper service by running the following command in the Kafka directory:
+### Start the ZooKeeper service by running the following command in the Kafka directory:
 
 #### Linux
 
@@ -59,7 +59,7 @@ Before installing Kafka, make sure that you have installed Java and ZooKeeper on
  zookeeper-server-start /opt/homebrew/etc/kafka/zookeeper.properties
 ```
 
-2. Start the Kafka service by running the following command in the Kafka directory:
+### Start the Kafka service by running the following command in the Kafka directory:
 
 #### Linux
 
