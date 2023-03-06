@@ -53,7 +53,7 @@ Before installing Kafka, make sure that you have installed Java and ZooKeeper on
  bin/zookeeper-server-start.sh config/zookeeper.properties
 ```
 
-#### ~ Mac M1
+#### ~ Apple Silicon
 
 ```bash
  zookeeper-server-start /opt/homebrew/etc/kafka/zookeeper.properties
@@ -67,7 +67,7 @@ Before installing Kafka, make sure that you have installed Java and ZooKeeper on
  bin/kafka-server-start.sh config/server.properties
 ```
 
-#### ~ Mac M1
+#### ~ Apple Silicon
 
 ```bash
  kafka-server-start /opt/homebrew/etc/kafka/server.properties
@@ -86,7 +86,7 @@ To create a topic, follow these steps:
  bin/kafka-topics.sh --create --zookeeper localhost:9092 --replication-factor 1 --partitions 1 --topic <topic_name>
 ```
 
-#### ~ Mac M1
+#### ~ Apple Silicon
 
 ```bash
  kafka-topics --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic <topic_name>
@@ -102,7 +102,7 @@ To create a topic, follow these steps:
  bin/kafka-console-producer.sh --broker-list localhost:9092 --topic <topic_name>
 ```
 
-#### ~ Mac M1
+#### ~ Apple Silicon
 
 ```bash
  kafka-console-producer --broker-list localhost:9092 --topic <topic_name>
@@ -116,7 +116,7 @@ To create a topic, follow these steps:
  bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic <topic_name> --from-beginning
 ```
 
-#### ~ Mac M1
+#### ~ Apple Silicon
 
 ```bash
  kafka-console-consumer --bootstrap-server localhost:9092 --topic <topic_name> --from-beginning
