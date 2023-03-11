@@ -50,13 +50,13 @@ Before installing Kafka, make sure that you have installed Java and ZooKeeper on
 #### ~ Linux
 
 ```bash
- bin/zookeeper-server-start.sh config/zookeeper.properties
+bin/zookeeper-server-start.sh config/zookeeper.properties
 ```
 
 #### ~ Apple Silicon
 
 ```bash
- zookeeper-server-start /opt/homebrew/etc/kafka/zookeeper.properties
+zookeeper-server-start /opt/homebrew/etc/kafka/zookeeper.properties
 ```
 
 ### Start the Kafka service by running the following command in the Kafka directory:
@@ -64,13 +64,13 @@ Before installing Kafka, make sure that you have installed Java and ZooKeeper on
 #### ~ Linux
 
 ```bash
- bin/kafka-server-start.sh config/server.properties
+bin/kafka-server-start.sh config/server.properties
 ```
 
 #### ~ Apple Silicon
 
 ```bash
- kafka-server-start /opt/homebrew/etc/kafka/server.properties
+kafka-server-start /opt/homebrew/etc/kafka/server.properties
 ```
 
 ## Creating a Topic
@@ -83,13 +83,13 @@ To create a topic, follow these steps:
 #### ~ Linux
 
 ```bash
- bin/kafka-topics.sh --create --zookeeper localhost:9092 --replication-factor 1 --partitions 1 --topic <topic_name>
+bin/kafka-topics.sh --create --zookeeper localhost:9092 --replication-factor 1 --partitions 1 --topic <topic_name>
 ```
 
 #### ~ Apple Silicon
 
 ```bash
- kafka-topics --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic <topic_name>
+kafka-topics --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic <topic_name>
 ```
 
 ## Producing and Consuming Messages
@@ -99,13 +99,13 @@ To create a topic, follow these steps:
 #### ~ Linux
 
 ```bash
- bin/kafka-console-producer.sh --broker-list localhost:9092 --topic <topic_name>
+bin/kafka-console-producer.sh --broker-list localhost:9092 --topic <topic_name>
 ```
 
 #### ~ Apple Silicon
 
 ```bash
- kafka-console-producer --broker-list localhost:9092 --topic <topic_name>
+kafka-console-producer --broker-list localhost:9092 --topic <topic_name>
 ```
 
 ### To consume messages, run the following command in the Kafka directory:
@@ -113,13 +113,13 @@ To create a topic, follow these steps:
 #### ~ Linux
 
 ```bash
- bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic <topic_name> --from-beginning
+bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic <topic_name> --from-beginning
 ```
 
 #### ~ Apple Silicon
 
 ```bash
- kafka-console-consumer --bootstrap-server localhost:9092 --topic <topic_name> --from-beginning
+kafka-console-consumer --bootstrap-server localhost:9092 --topic <topic_name> --from-beginning
 ```
 
 ## Advanced Concepts:
@@ -153,25 +153,25 @@ To take advantage of Kafka's advanced features, you can use various command-line
 1. To produce messages to a specific partition, use the `--partition` flag with the `bin/kafka-console-producer.sh` command, like this:
 
 ```bash
- bin/kafka-console-producer.sh --broker-list localhost:9092 --topic <topic_name> --partition <partition_number>
+bin/kafka-console-producer.sh --broker-list localhost:9092 --topic <topic_name> --partition <partition_number>
 ```
 
 2. To consume messages from a specific partition, use the `--partition` and `--offset` flags with the `bin/kafka-console-consumer.sh` command, like this:
 
 ```bash
- bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic <topic_name> --partition <partition_number> --offset <offset_number>
+bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic <topic_name> --partition <partition_number> --offset <offset_number>
 ```
 
 3. To produce messages with a key, use the `--property` flag to set the `parse.key` and `key.separator` properties, like this:
 
 ```bash
- bin/kafka-console-producer.sh --broker-list localhost:9092 --topic <topic_name> --property parse.key=true --property key.separator=:
+bin/kafka-console-producer.sh --broker-list localhost:9092 --topic <topic_name> --property parse.key=true --property key.separator=:
 ```
 
 4. To produce messages with headers, use the `--property` flag to set the `parse.key` and `key.header` properties, like this:
 
 ```bash
- bin/kafka-console-producer.sh --broker-list localhost:9092 --topic <topic_name> --property "parse.key=true" --property "key.separator=:" --property "key.header=key"
+bin/kafka-console-producer.sh --broker-list localhost:9092 --topic <topic_name> --property "parse.key=true" --property "key.separator=:" --property "key.header=key"
 ```
 
 ## Cheat Sheet:
@@ -181,61 +181,61 @@ Here is a summary of the commands you can use to work with Kafka's advanced feat
 #### ~ Produce message to specific partition:
 
 ```bash
- bin/kafka-console-producer.sh --broker-list localhost:9092 --topic <topic_name> --partition <partition_number>
+bin/kafka-console-producer.sh --broker-list localhost:9092 --topic <topic_name> --partition <partition_number>
 ```
 
 #### ~ Consume message from specific partition:
 
 ```bash
- bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic <topic_name> --partition <partition_number> --offset <offset_number>
+bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic <topic_name> --partition <partition_number> --offset <offset_number>
 ```
 
 #### ~ Produce message with key:
 
 ```bash
- bin/kafka-console-producer.sh --broker-list localhost:9092 --topic <topic_name> --property parse.key=true --property key.separator=:
+bin/kafka-console-producer.sh --broker-list localhost:9092 --topic <topic_name> --property parse.key=true --property key.separator=:
 ```
 
 #### ~ Produce message with headers:
 
 ```bash
- bin/kafka-console-producer.sh --broker-list localhost:9092 --topic <topic_name> --property "parse.key=true" --property "key.separator=:" --property "key.header=key"
+bin/kafka-console-producer.sh --broker-list localhost:9092 --topic <topic_name> --property "parse.key=true" --property "key.separator=:" --property "key.header=key"
 ```
 
 #### ~ List all topics:
 
 ```bash
- bin/kafka-topics.sh --list --zookeeper localhost:9092
+bin/kafka-topics.sh --list --zookeeper localhost:9092
 ```
 
 #### ~ Describe a topic:
 
 ```bash
- bin/kafka-topics.sh --describe --zookeeper localhost:9092 --topic <topic_name>
+bin/kafka-topics.sh --describe --zookeeper localhost:9092 --topic <topic_name>
 ```
 
 #### ~ Delete a topic:
 
 ```bash
- bin/kafka-topics.sh --delete --zookeeper localhost:9092 --topic <topic_name>
+bin/kafka-topics.sh --delete --zookeeper localhost:9092 --topic <topic_name>
 ```
 
 #### ~ List consumer groups:
 
 ```bash
- bin/kafka-consumer-groups.sh --list --bootstrap-server localhost:9092
+bin/kafka-consumer-groups.sh --list --bootstrap-server localhost:9092
 ```
 
 #### ~ Describe a consumer group:
 
 ```bash
- bin/kafka-consumer-groups.sh --describe --bootstrap-server localhost:9092 --group <group_name>
+bin/kafka-consumer-groups.sh --describe --bootstrap-server localhost:9092 --group <group_name>
 ```
 
 #### ~ Reset consumer group offsets:
 
 ```bash
- bin/kafka-consumer-groups.sh --reset-offsets --bootstrap-server localhost:9092 --group <group_name> --topic <topic_name> --to-earliest
+bin/kafka-consumer-groups.sh --reset-offsets --bootstrap-server localhost:9092 --group <group_name> --topic <topic_name> --to-earliest
 ```
 
 ## Conclusion
